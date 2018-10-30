@@ -368,6 +368,7 @@ class StrictSSDB(object):
         """
         if isinstance(ttl, datetime.timedelta):
             ttl = ttl.seconds + ttl.days * 24 * 3600
+        ttl = get_positive_integer('ttl', ttl)
         return self.execute_command('expire', name, ttl)
 
     def ttl(self, name):
