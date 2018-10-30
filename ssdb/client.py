@@ -388,7 +388,7 @@ class StrictSSDB(object):
         >>> ssdb.ttl('not_exist')
         -1
         """
-        return self.execute_command('expire', name)
+        return self.execute_command('ttl', name)
 
     def exists(self, name):
         """
